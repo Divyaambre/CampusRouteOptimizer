@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Campus Route Optimizer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CRO
+            </div>
+
+            <span class="brand-name">
+                Campus Route
+            </span>
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#" class="active">
+                Home
+            </a>
+
+            <a href="#route-section">
+                Find Route
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="location-pill">
+
+                    <span class="status-dot"></span>
+
+                    Campus navigation
+
+                </div>
+
+
+                <h1>
+                    Find your way
+                    <span>around campus.</span>
+                </h1>
+
+
+                <p>
+
+                    Find the shortest available route between
+                    campus locations and get where you need to go,
+                    faster.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ROUTE SECTION
+        ========================== -->
+
+        <section
+            id="route-section"
+            class="route-section"
+        >
+
+            <div class="route-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <p class="small-label">
+                            PLAN YOUR JOURNEY
+                        </p>
+
+                        <h2>
+                            Where are you going?
+                        </h2>
+
+                    </div>
+
+
+                    <div class="route-symbol">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="route-form">
+
+
+                    <!-- FROM -->
+
+                    <div class="location-field">
+
+                        <label for="source">
+
+                            <span class="field-icon start">
+                                ●
+                            </span>
+
+                            From
+
+                        </label>
+
+
+                        <select id="source">
+
+                            <option value="">
+                                Select starting location
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SWAP -->
+
+                    <button
+                        id="swapButton"
+                        class="swap-button"
+                        type="button"
+                        title="Swap locations"
+                    >
+
+                        ⇅
+
+                    </button>
+
+
+                    <!-- TO -->
+
+                    <div class="location-field">
+
+                        <label for="destination">
+
+                            <span class="field-icon end">
+                                ●
+                            </span>
+
+                            To
+
+                        </label>
+
+
+                        <select id="destination">
+
+                            <option value="">
+                                Select destination
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="findRoute"
+                    class="find-button"
+                    type="button"
+                >
+
+                    <span>
+                        Find Route
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+       <section class="road-section">
+
+    <div class="road-card">
+
+        <div class="road-heading">
+            <div>
+                <p class="small-label">ROAD STATUS</p>
+                <h2>Manage campus roads</h2>
+            </div>
+
+            <div class="road-icon">
+                ↔
+            </div>
+        </div>
+
+        <div class="road-controls">
+
+            <div class="location-field">
+                <label for="roadSource">
+                    From
+                </label>
+
+                <select id="roadSource">
+                    <option value="">
+                        Select location
+                    </option>
+                </select>
+            </div>
+
+            <div class="location-field">
+                <label for="roadDestination">
+                    To
+                </label>
+
+                <select id="roadDestination">
+                    <option value="">
+                        Select location
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="road-actions">
+
+            <button
+                id="blockRoad"
+                class="road-button block"
+                type="button"
+            >
+                Block Road
+            </button>
+
+            <button
+                id="unblockRoad"
+                class="road-button unblock"
+                type="button"
+            >
+                Unblock Road
+            </button>
+
+        </div>
+
+        <p id="roadMessage" class="road-message"></p>
+
+    </div>
+
+</section>
+
+<section class="network-section">
+
+    <div class="network-card">
+
+        <div class="network-heading">
+
+            <div>
+                <p class="small-label">CAMPUS NETWORK</p>
+                <h2>Campus connections</h2>
+                <p>
+                    View the available roads between campus locations.
+                </p>
+            </div>
+
+            <div class="network-status">
+                <span class="network-dot"></span>
+                Live network
+            </div>
+
+        </div>
+
+        <div class="campus-graph">
+
+            <div class="graph-node library">
+                <span class="node-dot"></span>
+                <strong>Library</strong>
+            </div>
+
+            <div class="graph-node canteen">
+                <span class="node-dot"></span>
+                <strong>Canteen</strong>
+            </div>
+
+            <div class="graph-node cse">
+                <span class="node-dot"></span>
+                <strong>CSE</strong>
+            </div>
+
+            <div class="graph-node admin">
+                <span class="node-dot"></span>
+                <strong>Admin</strong>
+            </div>
+
+            <div
+    class="graph-edge edge-library-cse"
+    data-from="Library"
+    data-to="CSE"
+>
+    <span>4 km</span>
+</div>
+
+<div
+    class="graph-edge edge-library-canteen"
+    data-from="Library"
+    data-to="Canteen"
+>
+    <span>2 km</span>
+</div>
+
+<div
+    class="graph-edge edge-canteen-admin"
+    data-from="Canteen"
+    data-to="Admin"
+>
+    <span>1 km</span>
+</div>
+
+<div
+    class="graph-edge edge-cse-admin"
+    data-from="CSE"
+    data-to="Admin"
+>
+    <span>3 km</span>
+</div>
+
+        </div>
+
+        <div class="network-legend">
+
+            <div>
+                <span class="legend-line"></span>
+                Open road
+            </div>
+
+            <div>
+                <span class="legend-line blocked"></span>
+                Blocked road
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section
+            id="result"
+            class="result-card hidden"
+        >
+
+            <div class="result-heading">
+
+                <div>
+
+                    <p class="small-label">
+                        YOUR ROUTE
+                    </p>
+
+                    <h2>
+                        Shortest available route
+                    </h2>
+
+                </div>
+
+
+                <div class="distance">
+
+                    <span>
+                        Total distance
+                    </span>
+
+                    <strong id="distance">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="route-result">
+
+                <div id="route" class="route-path"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            id="about"
+            class="about-section"
+        >
+
+            <div class="about-content">
+
+                <p class="small-label">
+                    CAMPUS ROUTE
+                </p>
+
+                <h2>
+                    Simple navigation for
+                    everyday campus travel.
+                </h2>
+
+                <p>
+
+                    Choose where you are and where you want
+                    to go. Campus Route finds an available
+                    path between the two locations and
+                    shows the distance.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-stats">
+
+                <div class="stat">
+
+                    <strong>
+                        01
+                    </strong>
+
+                    <span>
+                        Choose your starting point
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        02
+                    </strong>
+
+                    <span>
+                        Select your destination
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        03
+                    </strong>
+
+                    <span>
+                        Get your route
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <div class="brand-logo small">
+                CRO
+            </div>
+
+            <span>
+                Campus Route
+            </span>
+
+        </div>
+
+
+        <p>
+            Smart campus navigation
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

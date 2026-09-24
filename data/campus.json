@@ -1,0 +1,34 @@
+{
+    "locations": [
+        "Admin",
+        "Canteen",
+        "Library",
+        "CSE"
+    ],
+    "roads": [
+        {
+            "blocked": false,
+            "destination": "Canteen",
+            "distance": 1,
+            "source": "Admin"
+        },
+        {
+            "blocked": false,
+            "destination": "CSE",
+            "distance": 3,
+            "source": "Admin"
+        },
+        {
+            "blocked": false,
+            "destination": "Library",
+            "distance": 2,
+            "source": "Canteen"
+        },
+        {
+            "blocked": false,
+            "destination": "Library",
+            "distance": 4,
+            "source": "CSE"
+        }
+    ]
+}
