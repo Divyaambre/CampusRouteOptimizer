@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080";
+const API_URL = "https://campusrouteoptimizer.onrender.com";
 
 
 // Get HTML elements
