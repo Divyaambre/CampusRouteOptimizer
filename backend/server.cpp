@@ -199,7 +199,10 @@ server.Post("/unblock", [&graph](const httplib::Request& req,
 
 cout << "Server starting on http://localhost:8080" << endl;
 
-server.listen("localhost", 8080);
+const char* portEnv = getenv("PORT");
+int port = portEnv ? stoi(portEnv) : 8080;
+
+server.listen("0.0.0.0", port);
 
 return 0;
 
