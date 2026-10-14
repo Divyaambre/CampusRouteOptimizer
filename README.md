@@ -221,7 +221,7 @@ The project is deployed using separate frontend and backend services.
 - Repository — GitHub: Stores the source code and supports version control.
 
 
-flowchart LR
+flowchart 
     A["GitHub Repository"] --> B["Vercel - Frontend"]
     A --> C["Render - Docker + C++ Backend"]
     B <--> D["User's Browser"]
@@ -251,12 +251,6 @@ This project demonstrates the practical use of:
 - JSON-based data handling.
 - Git, GitHub, Docker, and cloud deployment.
 
-## 👩‍💻 Contributors
-
-Divya Ambre 
-Tanvi Patil
-Tanavi Shrirame
-Sumit Ghogare
 
 Developed as a Data Structures project to demonstrate how graph algorithms can solve a practical campus navigation problem.
 
