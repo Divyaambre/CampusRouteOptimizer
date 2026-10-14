@@ -141,21 +141,6 @@ POST /block?source=Canteen&destination=Admin
 
 The actual response format depends on the backend implementation.
 
-## 📁 Project Structure
-
-Folder/file	Purpose
-backend/include/	Header files containing class and function declarations
-backend/src/	C++ implementations, Dijkstra's algorithm, and server
-backend/lib/	Third-party header libraries used by the project
-frontend/css/	Website styling
-frontend/js/	Frontend logic and API requests
-frontend/assets/	Images, icons, and other static resources
-data/	Campus locations, road distances, and blocked-road information
-docs/	Architecture documentation and project screenshots
-Dockerfile	Instructions for building and running the backend container
-CMakeLists.txt	Build configuration for compiling the C++ project
-README.md	Project overview, architecture diagram, features, and setup instructions
-
 
  # 💻 Running the Project Locally
 
